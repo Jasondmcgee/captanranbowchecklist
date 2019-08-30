@@ -38,7 +38,7 @@ def test():
 def list_all_items():
     index = 0
     for list_item in checklist:
-        print(str(index) + list_item)
+        print(list_item)
         index = index + 1
 
 
@@ -86,7 +86,9 @@ def runme():
     print("type list to print your list")
     command = input()
     command = str(command).strip()
-    if command == "add" or command == "Add":
+    if command == "list" or command == "List":
+        list_all_items()
+    elif command == "add" or command == "Add":
         addanitem()
     elif command == "check" or command == "Check":
         checkofflist()
