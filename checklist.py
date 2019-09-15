@@ -78,7 +78,7 @@ def takeitemoff():
             print("we couldn't find your item on the list")
 
 
-def runme():
+def select():
     print("type add to add an item")
     print("type check to check off an item")
     print("type destroy to destroy an item")
@@ -86,8 +86,14 @@ def runme():
     print("type list to print your list")
     command = input()
     command = str(command).strip()
-    if command == "list" or command == "List":
+    if command == "read" or command == "Read":
         list_all_items()
+    elif command == "update" or command == "Update":
+        index = input("what index would you like to update?")
+        index = int(index)
+        new_item = input("what item would you like to update it with?")
+        new_item = str(new_item)
+        update(index, new_item)
     elif command == "add" or command == "Add":
         addanitem()
     elif command == "check" or command == "Check":
@@ -102,4 +108,4 @@ def runme():
 
 
 while leavelist < 1:
-    runme()
+    select()
